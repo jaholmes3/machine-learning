@@ -12650,12 +12650,17 @@ It is a ratio of true positives(words classified as spam, and which are actually
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><strong>Answer:</strong></p>
 <p><strong>Decision Trees</strong></p>
-<p><a href="http://scikit-learn.org/stable/modules/tree.html">Decision Trees</a> are a non-parametric supervised learning method. 
-There are a lot of applications for decision trees.  Decision trees can be intrepreted by humans and provide detials that are not easily identified by simply looking at the data - they can be visualized. One disadvantage is creating an over-complex trees that do not generalize data well - overfitting.  I would like to use a decision tree as a way to learn how it can be applied to this problem.  Some real world examples could be direct marketing which is related to this finding donors exampl, or the diagnoses of a medical problem.</p>
+<p><a href="http://scikit-learn.org/stable/modules/tree.html">Decision Trees</a> are a non-parametric supervised learning method. There are a lot of applications for decision trees.  Some real world examples could be <a href="https://data-flair.training/blogs/r-decision-trees">direct marketing</a> which is related to this finding donors example, or the diagnoses of a medical problem.</p>
+<p>A strength of Decision trees is that they can be intrepreted by humans and provide insight that is not easily identified by simply inspection of the data - they can be visualized. A disadvantage is creating an over-complex trees that do not generalize data well - overfitting.</p>
+<p>I want use decision trees for this model as a way to check the feature importance so that I can better understand the problem.</p>
 <p><strong>KNN</strong></p>
-<p><a href="https://kevinzakka.github.io/2016/07/13/k-nearest-neighbor/">K-Nearest Neighbors</a> is a non-parametic and instance based learning algorithm.  KNN has been used in the study of genomics.  One benifit is that it requires little training time and can be used as a starting point to plan and run more complex algorithms.  One issue with KNN is that it can suffer from skewed classes if there is a lot of data for a certain class.  The performance is slow with a large dataset.  I would like to see how it performs compared to a parametric model.  A real world example would be predicting housing prices.  Or for franchising and retail opportunities.</p>
+<p><a href="https://kevinzakka.github.io/2016/07/13/k-nearest-neighbor/">K-Nearest Neighbors</a> is a non-parametic and instance based learning algorithm.  KNN has been used in the study of genomics.  A real world example would be predicting housing prices.  Or for franchising and retail opportunities.</p>
+<p>One strenght is that it requires little training time and can be used as a starting point to plan and run more complex algorithms.  One issue with KNN is that it can suffer from skewed classes if there is a lot of data for a certain class.  The performance is slow with a large dataset.</p>
+<p>I would like to see how it performs compared to a parametric model.</p>
 <p><strong>Adaboost</strong></p>
-<p>Adaboost, or <a href="https://machinelearningmastery.com/boosting-and-adaboost-for-machine-learning/">Adaptive Boosting</a> is used to combine weak learners into a weaighted average. Facial recognition is one possible application.  Adaboost is less suceptible to overfitting, but also sensitive to noisy data and outliers.  I would like to use adaboost becuase it seems to produce good results and would like to see it as part of my solution.</p>
+<p>Adaboost, or <a href="https://machinelearningmastery.com/boosting-and-adaboost-for-machine-learning/">Adaptive Boosting</a> is used to combine weak learners into a weaighted average. <a href="https://www.analyticsvidhya.com/blog/2015/05/boosting-algorithms-simplified/">Facial recognition</a> is one application where it is sucessfully used.</p>
+<p>One strength is Adaboost is less suceptible to overfitting, but as a weakness it is sensitive to noisy data and outliers.</p>
+<p>I would like to use adaboost becuase it seems to produce good results and would like to see it as part of my solution.</p>
 
 </div>
 </div>
@@ -12881,7 +12886,7 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> From the three models I have chosen, Adaboost seems to fit well. It does well for both accuracy and f-score and training on all of the training sizes and training time is not that long.</p>
+<p><strong>Answer:</strong> From the three models I have chosen, Adaboost seems to fit well. It has the best results for both accuracy and f-score and training on all of the training sizes and training time is not that long.</p>
 
 </div>
 </div>
@@ -12903,7 +12908,8 @@ Look at the graph at the bottom left from the cell above(the visualization creat
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer:</strong> The prediciton model can be used to predict if a person makes over \$ 50,000 a year provided we give some information about the person.  We used Adaboost to boost the weak-learners to come up with a smarter model.  We also trained this model by feeding data we would like to query - Age, occupation, marital status, years of education - with the answer we are looking for; does he or she make more the \$ 50,000 a year.</p>
+<p><strong>Answer:</strong></p>
+<p>The prediciton model used can be used to predict with confidence if a person makes over \$ 50,000 a year provided we give some information about the person.  We used an algorithym called Adaboost to boost (adaptive boosting) that works by combining many simpler madels - weak-learners. to come up with a smarter model.  Weak-learners are defined as whose performance is only slighty better then a random pick.  The Adaboost algorythm will "boost" these weak-learners using a weighted sum to come up with a more accurate model. However, this model needs to be trained by feeding data we would like to query - Age, occupation, marital status, years of education - with the answer we are looking for; does he or she make more the \$ 50,000 a year.</p>
 
 </div>
 </div>
