@@ -7,7 +7,7 @@ from copy import deepcopy
 class QLearner(object):
 
     def __init__(self, num_states=100, num_actions=6, alpha=0.19,
-        gamma=0.91, rar=0.5, radr=0.99, dyna=0, verbose=True):
+        gamma=0.91, rar=0.5, radr=0.99, dyna=0, verbose=False):
         """The constructor QLearner() reserves space for keeping track of Q[s, a] for 
         the number of states and actions. It initializes Q[] with all zeros.
 
