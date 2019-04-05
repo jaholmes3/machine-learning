@@ -1,0 +1,12 @@
+GLD
+SPY
+$SPX
+$DJI
+IYR
+$VIX
+SH
+SDS
+VX1
+ESH
+JPZ
+ES
