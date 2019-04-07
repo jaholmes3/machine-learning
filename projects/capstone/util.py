@@ -10,8 +10,8 @@ import pandas as pd
 def symbol_to_path(symbol, base_dir=None):
     #"""Return CSV file path given ticker symbol."""
     if base_dir is None:
-        #base_dir = os.environ.get("MARKET_DATA_DIR", '/Users/administrator/virtualenvs/projects/capstone/data/')
-        base_dir = os.environ.get("MARKET_DATA_DIR", '/Users/jimholmes/Envs/machine-learning/projects/capstone/data/')
+        base_dir = os.environ.get("MARKET_DATA_DIR", '/Users/administrator/virtualenvs/projects/capstone/data/')
+        #base_dir = os.environ.get("MARKET_DATA_DIR", '/Users/jimholmes/Envs/machine-learning/projects/capstone/data/')
 
     return os.path.join(base_dir, "{}.csv".format(str(symbol)))
 
