@@ -164,7 +164,7 @@ class StrategyLearner(object):
         # If none of recent returns is greater than max_return, it has converged
         return True
 
-    def add_evidence(self, symbol="IBM", start_date=dt.datetime(2008,1,1),
+    def add_evidence(self, symbol="xIBM", start_date=dt.datetime(2008,1,2),
         end_date=dt.datetime(2009,12,31), start_val = 10000):
         """Create a QLearner, and train it for trading.
 
@@ -232,7 +232,7 @@ class StrategyLearner(object):
             plt.ylabel("Cumulative return (%)")
             plt.show()
 
-    def test_policy(self, symbol="IBM", start_date=dt.datetime(2010,1,1),
+    def test_policy(self, symbol="xIBM", start_date=dt.datetime(2010,1,1),
         end_date=dt.datetime(2011,12,31), start_val=10000):
         """Use the existing policy and test it against new data.
 
@@ -280,14 +280,14 @@ class StrategyLearner(object):
 
 if __name__=="__main__":
     start_val = 100000
-    symbol = "ESH2009"
+    symbol = "sJPM"
     commission = 1.00
     impact = 1.0
     num_shares = 5
 
     # In-sample or training period
-    start_date = dt.datetime(2007, 12, 21)
-    end_date = dt.datetime(2009, 3, 19)
+    start_date = dt.datetime(2008, 1, 1)
+    end_date = dt.datetime(2009, 12, 31)
     
     # Get a dataframe of benchmark data. Benchmark is a portfolio starting with
     # $100,000, investing in 1000 shares of symbol and holding that position
@@ -311,8 +311,8 @@ if __name__=="__main__":
 
     # Out-of-sample or testing period: Perform similiar steps as above,
     # except that we don't train the data (i.e. run add_evidence again)
-    start_date = dt.datetime(2008, 12, 19)
-    end_date = dt.datetime(2010, 3, 19)
+    start_date = dt.datetime(2010, 1, 1)
+    end_date = dt.datetime(2011, 12, 31)
     df_benchmark_trades = create_df_benchmark(symbol, start_date, end_date, 
                                               num_shares)
     df_trades = stl.test_policy(symbol=symbol, start_date=start_date, 

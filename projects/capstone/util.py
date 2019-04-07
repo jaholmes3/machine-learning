@@ -10,23 +10,23 @@ import pandas as pd
 def symbol_to_path(symbol, base_dir=None):
     #"""Return CSV file path given ticker symbol."""
     if base_dir is None:
-        base_dir = os.environ.get("MARKET_DATA_DIR", '/Users/administrator/virtualenvs/projects/capstone/data')
+        base_dir = os.environ.get("MARKET_DATA_DIR", '/Users/administrator/virtualenvs/projects/capstone/data/')
     return os.path.join(base_dir, "{}.csv".format(str(symbol)))
 
 
 def get_data(symbols, dates, addVX1=True, colname = 'Adj Close'):
     """Read stock data (adjusted close) for given symbols from CSV files."""
     df = pd.DataFrame(index=dates)
-    if addVX1 and 'VX1' not in symbols:  # add SPY for reference, if absent
-        symbols = ['VX1'] + symbols
+    if addVX1 and 'CMENQ' not in symbols:  # add SPY for reference, if absent
+        symbols = ['CMENQ'] + symbols
 
     for symbol in symbols:
         df_temp = pd.read_csv(symbol_to_path(symbol), index_col='Date',
                 parse_dates=True, usecols=['Date', colname], na_values=['nan'])
         df_temp = df_temp.rename(columns={colname: symbol})
         df = df.join(df_temp)
-        if symbol == 'VX1':  # drop dates SPY did not trade
-            df = df.dropna(subset=["VX1"])
+        if symbol == 'CMENQ':  # drop dates SPY did not trade
+            df = df.dropna(subset=["CMENQ"])
 
     return df
 
