@@ -97,7 +97,7 @@ def compute_portvals_single_symbol(df_orders, symbol, start_val=100000,
 
 def market_simulator(df_orders, df_orders_benchmark, symbol, start_val=100000,
     commission=0, impact=0.005, daily_rf=0.0, samples_per_year=252.0, 
-    save_fig=False, fig_name="plot.png"):
+    save_fig=True, fig_name="plot-2.png"):
     """
     This function takes in and executes trades from orders dataframes
 
@@ -155,7 +155,7 @@ def market_simulator(df_orders, df_orders_benchmark, symbol, start_val=100000,
     portvals.rename(columns={"port_val": "Portfolio"}, inplace=True)
     portvals_bm.rename(columns={"port_val": "Benchmark"}, inplace=True)
     plot_norm_data_vertical_lines(df_orders, portvals, portvals_bm,
-        save_fig=True, fig_name="plot.png")
+        save_fig=True, fig_name="plot-3.png")
 
 def plot_norm_data_vertical_lines(df_orders, portvals, portvals_bm, 
     plot_vertical_lines=True, save_fig=True, fig_name="plot.png"):

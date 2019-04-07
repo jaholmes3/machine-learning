@@ -42,7 +42,7 @@ def assess_portfolio(sd = dt.datetime(2008,1,1), ed = dt.datetime(2009,1,1), \
     dates = pd.date_range(sd, ed)
     prices_all = get_data(syms, dates)  # automatically adds SPY
     prices = prices_all[syms]  # only portfolio symbols
-    prices_SPY = prices_all["SPY"]  # only SPY, for comparison later
+    prices_SPY = prices_all["VX1"]  # only SPY, for comparison later
 
     # Get daily portfolio value
     port_val = get_portfolio_value(prices, allocs, sv)
